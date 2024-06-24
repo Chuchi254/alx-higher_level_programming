@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # Create a cursor object
     cur = db.cursor()
 
-    # Execute the SQL query using a parameterized query to prevent SQL injection
+    # Execute SQL query using a parameterized query to prevent SQL injection
     query = (
             "SELECT * FROM states WHERE BINARY name = %s "
             "ORDER BY id ASC"
