@@ -38,10 +38,10 @@ if __name__ == "__main__":
     # Create a new State object with a City
     new_state = State(name="California")
     new_city = City(name="San Francisco", state=new_state)
-    new_state.cities.append(new_city)
 
     # Add the new State (with the City) object to the session
     session.add(new_state)
+    session.add(new_city)
     session.commit()
 
     # Print the new state's id and the new city's id
