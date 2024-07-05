@@ -59,15 +59,15 @@ int compare_lists(listint_t *head1, listint_t *head2)
  */
 int is_palindrome(listint_t **head)
 {
-	if (!head || !*head)
-		return (1);
-
 	listint_t *slow = *head;
 	listint_t *fast = *head;
 	listint_t *second_half;
 	listint_t *prev_slow = *head;
 	listint_t *midnode = NULL;
 	int res = 1;
+
+	if (!head || !*head)
+		return (1);
 
 	if (*head != NULL && (*head)->next != NULL)
 	{
