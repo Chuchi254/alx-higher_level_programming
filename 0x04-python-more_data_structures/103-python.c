@@ -42,12 +42,12 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
 	{
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
-	printf(" size: %ld\n", ((PyVarObject *)p)->ob_size);
-	printf(" trying string: %s\n", bytes->ob_sval);
+	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
+	printf("  trying string: %s\n", bytes->ob_sval);
 
 	if (((PyVarObject *)p)->ob_size > 10)
 		size = 10;
