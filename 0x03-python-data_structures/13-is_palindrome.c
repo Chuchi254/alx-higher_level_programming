@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * reverse_listsint - Reverses a singly linked list
+ * reverse_listint - Reverses a singly linked list
  * @head: Double pointer to the head of the list
  * Return: Pointer to the first node of the reversed list
  */
@@ -62,7 +62,10 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head)
 		return (1);
 
-	listint_t *slow = *head, *fast = *head, *second_half, *prev_slow = *head;
+	listint_t *slow = *head;
+	listint_t *fast = *head;
+	listint_t *second_half;
+	listint_t *prev_slow = *head;
 	listint_t *midnode = NULL;
 	int res = 1;
 
@@ -80,12 +83,10 @@ int is_palindrome(listint_t **head)
 			midnode = slow;
 			slow = slow->next;
 		}
-
 		second_half = slow;
 		prev_slow->next = NULL;
 		reverse_listint(&second_half);
 		res = compare_lists(*head, second_half);
-
 		reverse_listint(&second_half);
 		if (midnode != NULL)
 		{
