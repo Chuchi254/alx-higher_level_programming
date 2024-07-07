@@ -44,7 +44,7 @@ void print_python_bytes(PyObject *p) {
 	printf("  size: %zd\n", size);
 	printf("  trying string: %s\n", str);
 	printf("  first %zd bytes: ", limit);
-	for (i = 0; i <= limit; i++) {
+	for (i = 0; i < limit; i++) {
 		printf("%02x ", (unsigned char)str[i]);
 	}
 	printf("\n");
