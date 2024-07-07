@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import math
-
 """A module that defines a MagicClass representing a circle with
 methods to calculate area and circumference."""
+import math
 
 
 class MagicClass:
