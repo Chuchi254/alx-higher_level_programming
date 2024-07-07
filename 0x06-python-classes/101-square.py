@@ -110,11 +110,16 @@ class Square:
         Returns:
             str: The string representation of the square.
         """
-        result = []
         if self.__size == 0:
-            result.append("")
-        else:
-            result.append("\n" * self.__position[1])
-            for _ in range(self.__size):
+            return ""
+
+        result = []
+        for _ in range(self.__position[1]):
+            result.append("\n")
+
+        for i in range(self.__size):
                 result.append(" " * self.__position[0] + "#" * self.__size)
+                if i < self.__size - 1:
+                    result.append("\n")
+
         return "".join(result)
