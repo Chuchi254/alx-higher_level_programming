@@ -38,13 +38,13 @@ void print_python_bytes(PyObject *p) {
 
 	Py_ssize_t size = ((PyVarObject *)p)->ob_size;
 	char *str = ((PyBytesObject *)p)->ob_sval;
-	Py_ssize_t i, limit = size < 10 ? size : 10;
+	Py_ssize_t i, limit = size <= 10 ? size : 10;
 
 	printf("[.] bytes object info\n");
 	printf("  size: %zd\n", size);
 	printf("  trying string: %s\n", str);
 	printf("  first %zd bytes: ", limit);
-	for (i = 0; i < limit; i++) {
+	for (i = 0; i <= limit; i++) {
 		printf("%02x ", (unsigned char)str[i]);
 	}
 	printf("\n");
@@ -58,5 +58,5 @@ void print_python_float(PyObject *p) {
 
 	double value = ((PyFloatObject *)p)->ob_fval;
 	printf("[.] float object info\n");
-	printf(" value: %g\n", value);
+	printf("  value: %g\n", value)i;
 }
