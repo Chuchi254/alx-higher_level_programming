@@ -38,7 +38,7 @@ void print_python_bytes(PyObject *p) {
 
 	Py_ssize_t size = ((PyVarObject *)p)->ob_size;
 	char *str = ((PyBytesObject *)p)->ob_sval;
-	Py_ssize_t i, limit = size < 11 ? size : 10;
+	Py_ssize_t i, limit = size < 11 ? size : 11;
 
 	printf("[.] bytes object info\n");
 	printf("  size: %zd\n", size);
