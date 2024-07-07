@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import math
 
 """A module that defines a MagicClass representing a circle with
