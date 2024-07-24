@@ -1,6 +1,3 @@
--- Use the specified database
-USE hbtn_0d_usa;
-
 -- List all cities with their corresponding state names
 SELECT
 	cities.id,
