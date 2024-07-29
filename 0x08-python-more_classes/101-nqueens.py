@@ -64,10 +64,11 @@ def main():
         print_size_error_and_exit()
 
     board = [[0 for _ in range(N)] for _ in range(N)]
-    soltuions = []
+    solutions = []
     solve_nqueens(board, 0, solutions)
     for solution in solutions:
         print(solution)
 
-    if __name__ == "__main__":
-        main()
+
+if __name__ == "__main__":
+    main()
