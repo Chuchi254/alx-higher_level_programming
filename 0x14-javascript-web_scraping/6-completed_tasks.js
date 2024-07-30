@@ -21,16 +21,5 @@ request(apiUrl, (error, response, body) => {
     }
   });
 
-  const entries = Object.entries(completedTasks);
-  const formattedOutput = entries.map(([key, value], index) => {
-    if (index === 0) {
-      return `{ '${key}': ${value}, `;
-    } else if (index === entries.length - 1) {
-      return ` '${key}': ${value} }`;
-    } else {
-      return ` '${key}': ${value},`;
-    }
-  }).join('\n');
-
-  console.log(formattedOutput);
+  console.log(completedTasks);
 });
