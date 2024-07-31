@@ -77,4 +77,9 @@ Test with only special characters:
 Test with empty string:
 >>> text_indentation("")
 
-"""
+Test with missing argument:
+>>> try:
+... 	text_indentation()
+... except Exception as e:
+... 	print(e)
+text_indentation() missing 1 required positional argument: 'text'
