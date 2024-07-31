@@ -1,0 +1,38 @@
+>>> MyList = __import__('1-my_list').MyList
+
+Test creating a MyList instance and appending elements:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Test print_sorted method:
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Test print_sorted with already sorted list:
+>>> sorted_list = MyList([1, 2, 3, 4, 5])
+>>> sorted_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(sorted_list)
+[1, 2, 3, 4, 5]
+
+Test print_sorted with reverse sorted list:
+>>> reverse_list = MyList([5, 4, 3, 2, 1])
+>>> reverse_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(reverse_list)
+[5, 4, 3, 2, 1]
+
+Test print_sorted with empty list:
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+>>> print(empty_list)
+[]
