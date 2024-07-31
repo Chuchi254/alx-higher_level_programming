@@ -1,0 +1,80 @@
+"""
+This is the doctest for the text_indentation function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test with multiple sentences and special characters:
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram videor an totas paginas commovere?
+<BLANKLINE>
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+
+Test with multiple spaces after special characters:
+>>> text_indentation("Hello.  How are you? I am fine.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I am fine.
+<BLANKLINE>
+
+Test with no special characters:
+>>> text_indentation("This is a sentence without special characters")
+This is a sentence without special characters
+
+Test with non-string input:
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+Test with special character at the end:
+>>> text_indentation("End with special character:")
+End with special character:
+<BLANKLINE>
+
+Test with multiple special characters in a row:
+>>> text_indentation("Multiple special characters in a row:... Testing?!!")
+Multiple special characters in a row:
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+Testing?
+<BLANKLINE>
+!!
+
+Test with spaces before and after special characters:
+>>> text_indentation("Space before . ? : and after")
+Space before .
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+and after
+
+Test with only special characters:
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+Test with empty string:
+>>> text_indentation("")
+
+"""
