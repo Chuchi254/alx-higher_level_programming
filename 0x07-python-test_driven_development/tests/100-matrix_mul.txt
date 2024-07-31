@@ -1,0 +1,42 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test regular matrices multiplication:
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+Test empty matrix:
+>>> try:
+... 	matrix_mul([], [[1, 2], [3, 4]])
+... except Exception as e:
+... 	print(e)
+m_a can't be empty
+
+Test non-rectangular matrix:
+>>> try:
+... 	matrix_mul([[1, 2, 3], [4, 5]], [[1, 2], [3, 4]])
+... except Exception as e:
+... 	print(e)
+each row of m_a must be of the same size
+
+Test invalid elements:
+>>> try:
+... 	matrix_mul([[1, 2], [3, '4']], [[1, 2], [3, 4]])
+... except Exception as e:
+... 	print(e)
+m_a should contain only integers or floats
+
+Test invalid types:
+>>> try:
+... 	matrix_mul("not a list", [[1, 2], [3, 4]])
+... except Exception as e:
+... 	print(e)
+m_a must be a list
+
+Test incompatible matrices:
+>>> try:
+... 	matrix_mul([[1, 2]], [[1, 2], [3, 4], [5, 6]])
+... except Exception as e:
+... 	print(e)
+m_a and m_b can't be multiplied
