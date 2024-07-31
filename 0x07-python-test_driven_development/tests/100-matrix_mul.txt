@@ -8,35 +8,79 @@ Test regular matrices multiplication:
 
 Test empty matrix:
 >>> try:
-... 	matrix_mul([], [[1, 2], [3, 4]])
+...     matrix_mul([], [[1, 2], [3, 4]])
 ... except Exception as e:
-... 	print(e)
+...     print(e)
 m_a can't be empty
+>>> try:
+...     matrix_mul([[1, 2], [3, 4]], [])
+... except Exception as e:
+...     print(e)
+m_b can't be empty
 
 Test non-rectangular matrix:
 >>> try:
-... 	matrix_mul([[1, 2, 3], [4, 5]], [[1, 2], [3, 4]])
+...     matrix_mul([[1, 2, 3], [4, 5]], [[1, 2], [3, 4]])
 ... except Exception as e:
-... 	print(e)
+...     print(e)
 each row of m_a must be of the same size
+>>> try:
+...     matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+... except Exception as e:
+...     print(e)
+each row of m_b must be of the same size
 
 Test invalid elements:
 >>> try:
-... 	matrix_mul([[1, 2], [3, '4']], [[1, 2], [3, 4]])
+...     matrix_mul([[1, 2], [3, '4']], [[1, 2], [3, 4]])
 ... except Exception as e:
-... 	print(e)
+...     print(e)
 m_a should contain only integers or floats
+>>> try:
+...     matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, '4']])
+... except Exception as e:
+...     print(e)
+m_b should contain only integers or floats
 
 Test invalid types:
 >>> try:
-... 	matrix_mul("not a list", [[1, 2], [3, 4]])
+...     matrix_mul("not a list", [[1, 2], [3, 4]])
 ... except Exception as e:
-... 	print(e)
+...     print(e)
 m_a must be a list
+>>> try:
+...     matrix_mul([[1, 2], [3, 4]], "not a list")
+... except Exception as e:
+...     print(e)
+m_b must be a list
+
+Test non-list of lists:
+>>> try:
+...     matrix_mul([1, 2, 3], [[1, 2], [3, 4]])
+... except Exception as e:
+...     print(e)
+m_a must be a list of lists
+>>> try:
+...     matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
+... except Exception as e:
+...     print(e)
+m_b must be a list of lists
 
 Test incompatible matrices:
 >>> try:
-... 	matrix_mul([[1, 2]], [[1, 2], [3, 4], [5, 6]])
+...     matrix_mul([[1, 2]], [[1, 2], [3, 4], [5, 6]])
 ... except Exception as e:
-... 	print(e)
+...     print(e)
 m_a and m_b can't be multiplied
+
+Test with missing arguments:
+>>> try:
+...     matrix_mul([[1, 2]])
+... except Exception as e:
+...     print(e)
+matrix_mul() missing 1 required positional argument: 'm_b'
+>>> try:
+...     matrix_mul()
+... except Exception as e:
+...     print(e)
+matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
