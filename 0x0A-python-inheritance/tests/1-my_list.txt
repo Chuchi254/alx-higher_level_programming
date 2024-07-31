@@ -1,5 +1,12 @@
 >>> MyList = __import__('1-my_list').MyList
 
+Test print_sorted with negative numbers:
+>>> negative_list = MyList([3, -1, 2, -4, 0])
+>>> negative_list.print_sorted()
+[-4, -1, 0, 2, 3]
+>>> print(negative_list)
+[3, -1, 2, -4, 0]
+
 Test creating a MyList instance and appending elements:
 >>> my_list = MyList()
 >>> my_list.append(1)
