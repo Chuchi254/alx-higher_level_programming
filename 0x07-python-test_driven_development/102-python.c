@@ -8,7 +8,7 @@
  * print_python_string - prints information about Python string
  * @p: PyObject string object
  */
-void print_python_string(pyObject *p)
+void print_python_string(PyObject *p)
 {
 	Py_ssize_t length;
 	wchar_t *value;
